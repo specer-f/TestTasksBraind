@@ -16,13 +16,13 @@
 		if ($errors % 2 == 0){
 			if ($warnings % 4 == 0){
 				$commit = $warnings / 2;
-				$errors += $warnings / 4;
+				$errors += $warnings / 2;
 				$commit += $errors / 2;
 			} else {
-				$commit = 4 - ($warning % 4);
+				$commit = 4 - ($warnings % 4);
 				$warnings += $commit;
-				$commit += $warning / 2;
-				$errors += $warnings / 4;
+				$commit += $warnings / 2;
+				$errors += $warnings / 2;
 				$commit += $errors / 2;
 			}
 		} else {
