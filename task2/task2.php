@@ -33,11 +33,16 @@
 				$errors += $warnings / 2;
 				$commit += $errors / 2;
 			} else {
-				$commit = $warnings % 4;
-				$warnings += $commit;
-				$commit += $warnings / 2;
+				if ($warnings % 2 == 0){
+					$commit = $warnings / 2;
+				} else {
+					$commit = $warnings % 4;
+					$warnings += $commit;
+					$commit += $warnings / 2;
+				}
 				$errors += $warnings / 2;
 				$commit += $errors / 2;
+				
 			}
 		}
 	}
