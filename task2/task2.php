@@ -1,9 +1,20 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<form action="./task2.php" method="post">
+	Количество ошибок: <input type="text" name="errors" /><br />
+	Количество предупреждений: <input type="text" name="warnings" /><br />
+	<input type="submit" value="Узнать количество коммитов" />
+</form>
+
 <?php
+	if (empty($_POST)) {
+		exit('Введите значения');
+	}
 	$errors=trim($_POST['errors']);
 	$warnings=trim($_POST['warnings']);
 	if (empty($_POST['errors']) and empty($_POST['warnings'])){
 		exit('Введите значения');
 	}
+
 	echo "Введённые вами данные: ".$errors." и ".$warnings."<br/>";
 
 	if ($warnings == 0){
