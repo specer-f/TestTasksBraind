@@ -1,4 +1,15 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<form action="./task3.php" method="post">
+	N: <input type="number" name="N" /><br />
+	K: <input type="number" name="K" /><br />
+	<input type="submit" value="Узнать позицию элемента" />
+</form>
+
 <?php
+	if (empty($_POST)) {
+		exit('Введите значения');
+	}
+	
 	$n=$_POST['N'];
 	$k=$_POST['K'];
 
